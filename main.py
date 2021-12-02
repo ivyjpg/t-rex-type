@@ -66,7 +66,39 @@ for letter in to_do:
         print("score: " + str(score) + "\n")
 
 
+
 print("LEVEL 2")
+correct_flag = True
+score = 0
+random.shuffle(words)
+
+print("rules: for each word, input one letter per line.\n")
+for word in words:
+    if score >= 3:
+        print("congrats! you've passed the level!")
+        break
+
+    num_lines = len(word)
+    print("type the following: " + word + "\n")
+    user_type = ""
+
+    for i in range(num_lines):
+        letter = word[i]
+        combos = letters[letter.upper()]
+        selected = random.choice(combos)
+        user_type = input(letter + ": " + selected + "\n")
+        while (user_type != selected):
+            correct_flag = False
+            print("incorrect, try again: ")
+            user_type = input()
+
+    if correct_flag:
+        score += 1
+    print("score: " + str(score) + "\n")
+    correct_flag = True
+
+
+print("LEVEL 3")
 score = 0
 random.shuffle(words)
 
@@ -78,11 +110,9 @@ for word in words:
         break
 
     num_lines = len(word)
-    print(num_lines)
     print("type the following: " + word + "\n")
     user_type = ""
     for i in range(num_lines):
-        print(i)
         user_type += input() + "\n"
     
     user_type = user_type.split("\n")
