@@ -31,9 +31,9 @@ for letter in to_do:
     while selected2 == selected:
         selected2 = random.choice(combos)
 
-    print("Now try typing " + letter + " another way: " + selected2 + "\n")
-        if (user_type == selected):
-        print("correct!\n")
+    user_type = input("Now try typing " + letter + " another way: " + selected2 + "\n")
+    if (user_type == selected2):
+        print("Correct!\n")
 
     else:
         while (user_type != selected):
@@ -46,7 +46,7 @@ for letter in to_do:
 print("LEVEL 2")
 correct_flag = True
 score = 0
-random.shuffle(words)
+# random.shuffle(words)
 
 print("Now we'll learn how to type words. For each word, we'll need to input one letter per line.\n")
 
@@ -67,36 +67,29 @@ for i in range(num_lines):
 
 correct_flag = True
 
+print("\nNice job!")
 
-print("LEVEL 3")
-score = 0
-random.shuffle(words)
+print("\nLEVEL 3")
+print("Now try typing the word without any guidance!")
+word = "cat"
+num_lines = len(word)
+print("Type the following: " + word + "\n")
+user_type = ""
+for i in range(num_lines):
+    user_type += input() + "\n"
 
-print("rules: for each word, input one letter per line.\n")
-for word in words:
+user_type = user_type.split("\n")
+correct_flag = True
 
-    if score >= 5:
-        print("congrats! you've passed the level!")
-        break
-
-    num_lines = len(word)
-    print("type the following: " + word + "\n")
-    user_type = ""
-    for i in range(num_lines):
-        user_type += input() + "\n"
-    
-    user_type = user_type.split("\n")
-    correct_flag = True
-
-    for j in range(len(user_type)-1):
-        cap_letter = word[j].upper()
-        if user_type[j] in letters[cap_letter]:
-            pass
-        else:
-            correct_flag = False
-    
-    if correct_flag:
-        score += 1
-        print("correct! score: " + str(score) + "\n")
+for j in range(len(user_type)-1):
+    cap_letter = word[j].upper()
+    if user_type[j] in letters[cap_letter]:
+        pass
     else:
-        print("incorrect! score: " + str(score) + "\n")
+        correct_flag = False
+
+if correct_flag:
+    score += 1
+    print("\nCorrect! \n")
+else:
+    print("\nIncorrect! \n")
