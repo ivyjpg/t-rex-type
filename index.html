@@ -2,26 +2,122 @@
 <title>t-rex typeracer</title>
 <html>
 <head>
-<div id="header">t- rex typeracer</div>
+<div id="header">
+    <h1>t-rex typeracer</h1>
+    <img src="img/typed.gif" id="alpha"/>
+</div>
 </head>
 
 <body>
-    <div id="typeracer">
-        <iframe src="https://trinket.io/embed/python3/4d04b715ca?outputOnly=true&start=result" width="90%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    <h2>about the alphabet</h2>
+    <div class="slides">
+    <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSx4-WjMtMz_5TPqjxoKm1JqDLpHr4Ju4HRfeaYlWbxaLlDjM2f4bQtXf_uSm8_aITdB76HT4haw4Nq/embed?rm=minimal&start=true&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
     </div>
+
+    <h2>about the game</h2>
+    <!-- <img src="img/wholealpha.png" id="alpha"/> -->
+    <div id="desc">The alphabet created above is a complete upheaval of the language that we are familiar with. 
+        Not only is one letter represented by a sequence of multiple keys on the keyboard, there are also multiple unique representations of the same letter. 
+        <br/><br/>Thinking about how fast a person can learn to type with this new system leads us to the questions: 
+        <br/>How do we learn to type? 
+        <br/>Is it just muscle memory, or are we consciously aware of the locations of the letters? 
+        <br/>Does the visual nature of this language make it easier to learn and retain than traditional typing?
+    </div> 
+
+    <div id="typeracer">
+        <iframe src="https://trinket.io/embed/python3/9a21ceb256?outputOnly=true&start=result" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe>
+    </div>
+
+    <h2>alphabet reference</h2>
+    <div class="slides">
+        <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQFvCyDO90Kre17ezqmvaplJ7Va8iA010r5slNnpQ1jo5_j4J5-Lgx7LhhnOgU69nZvCbeWc4Aal4AQ/embed?rm=minimal&start=true&loop=false&delayms=60000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+    </div>
+
+    <!-- <div id="bottom-section">
+        <img src="img/ah.png" class="translations"/>
+        <img src="img/ip.png" class="translations"/>
+        <img src="img/qx.png" class="translations"/>
+        <img src="img/yz.png" class="translations"/>
+    </div> -->
 </body>
 
 </html>
 
 <style>
-    #header {
+    /* body {
+        background: rgb(252, 245, 227);
+    } */
+
+    h1 {
+        background-color: antiquewhite;
         text-align: center;
         font-size: 40px;
         margin-bottom: 20px;
+        margin-top: 170px;
+        padding: 20px;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+        width: 30%;
+        margin-left: 35%;
+    }
+
+    h2 {
+        background-color: antiquewhite;
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 20px;
+        margin-top: 130px;
+        padding: 20px;
+        font-weight: bold;
+        font-family: 'Courier New', Courier, monospace;
+        width: 30%;
+        margin-left: 35%;
+    }
+
+    #desc {
         font-family: sans-serif;
+        width: 50%;
+        margin-left: 26%;
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 20px;
     }
 
     #typeracer {
-        margin-left: 10%;
+        margin-left: 16%;
+        width: 70%;
+        /* margin-right: 1px solid lightgray; */
     }
+
+    #alpha {
+        width: 50%;
+        margin-left: 26%;
+        margin-bottom: 30px;
+    }
+
+    .translations {
+        display: inline;
+        width: 800px;
+    }
+
+    .translations:last-of-type {
+        width: 400px;
+    }
+
+    #bottom-section {
+        width: 60%;
+        margin-left: 23%;
+    }
+
+    .slides {
+        margin-left: 19%;
+        padding-left: -2px;
+        border-left: 2px solid black;
+    }
+
+    .slides:last-of-type {
+        margin-bottom: 40px;
+    }
+
 </style>
