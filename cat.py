@@ -8,6 +8,7 @@ letters = {"A": ["waz wsx as", "esx edc sd", "rdc rfv df", "tfv tgb fg", "ygb yh
 
 user = input("Enter your name: ")
 print("Welcome, " + user + ".\n")
+print("For best results, play this game using only your pointer finger to type.\n")
 
 to_do = ["A", "C", "T"]
 random.shuffle(to_do)
@@ -36,9 +37,9 @@ for letter in to_do:
         print("Correct!\n")
 
     else:
-        while (user_type != selected):
+        while (user_type != selected2):
             print("Sorry, try again:")
-            user_type = input(selected + "\n")
+            user_type = input(selected2 + "\n")
     
     print("")
 
@@ -60,6 +61,8 @@ for i in range(num_lines):
     combos = letters[letter.upper()]
     selected = random.choice(combos)
     user_type = input(letter + ": " + selected + "\n")
+    if (user_type == selected):
+        print("Correct!\n")
     while (user_type != selected):
         correct_flag = False
         print("Incorrect, try again: ")
@@ -75,21 +78,32 @@ word = "cat"
 num_lines = len(word)
 print("Type the following: " + word + "\n")
 user_type = ""
-for i in range(num_lines):
-    user_type += input() + "\n"
-
-user_type = user_type.split("\n")
 correct_flag = True
 
-for j in range(len(user_type)-1):
-    cap_letter = word[j].upper()
-    if user_type[j] in letters[cap_letter]:
-        pass
+for i in range(num_lines):
+    user_type = input()
+    cap_letter = word[i].upper()
+    if user_type in letters[cap_letter]:
+        print("\nCorrect! You typed " + cap_letter.lower() + "\n")
     else:
         correct_flag = False
+        while (user_type not in letters[cap_letter]):
+          print("\nIncorrect, try again: ")
+          user_type = input()
+        print("Correct! You typed " + cap_letter.lower() + "\n")
+        
+print("\nNice job, you typed "+ word + "!")
 
-if correct_flag:
-    score += 1
-    print("\nCorrect! \n")
-else:
-    print("\nIncorrect! \n")
+# user_type = user_type.split("\n")
+
+
+# for j in range(len(user_type)-1):
+#     cap_letter = word[j].upper()
+#     if user_type[j] in letters[cap_letter]:
+#         print("\nCorrect! You typed " + cap_letter + "\n")
+#     else:
+#         correct_flag = False
+#         print("\nIncorrect!\n")
+
+# if correct_flag:
+#     print("\nNice job, you typed "+ word + "!")
